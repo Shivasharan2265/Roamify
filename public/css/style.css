@@ -1,0 +1,104 @@
+body{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 700;
+    
+}
+
+.navbar{
+    padding-top: 20px !important;
+    padding-left: 60px  !important;
+    height:7rem !important;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.nav-link{
+    /* color: black !important; */
+    font-family: Arial, Helvetica, sans-serif !important;
+    margin-right: 4rem !important;
+    font-size: 250x !important;
+
+}
+.navbar-brand{
+    font-family: Arial, Helvetica, sans-serif !important;
+
+}
+.navbar-nav{
+ margin-left: 10rem !important;
+ 
+}
+.name{
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: pink !important;
+}
+
+.empt{
+    margin-top: 30px !important;
+    
+}
+
+.linkk{
+    text-decoration: none !important;
+}
+
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    text-decoration: none !important;
+}
+.card-body{
+    padding: 0 !important;
+    text-decoration: none !important;
+}
+
+.card-text{
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    
+}
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.mainf{
+    background-color: #F7F7F7;
+}
+.footerr{
+    display: flex;
+    padding: 30px;
+    height: 3rem;
+    margin-top: -10px;
+   
+
+}
+.mm{
+    display: flex;
+    font-weight: 400;
+    color: black;
+}
+.footer1{
+    margin-left: 20px;
+   
+   
+}
+.footer2{
+    
+    display: flex;
+    margin-left: 30rem;
+   
+    
+}
+.f2{
+    margin-left: 10px;
+}
+.new{
+    margin: 20px
+}
