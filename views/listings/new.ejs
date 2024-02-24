@@ -5,9 +5,9 @@
     <div class="row">
       <div class="col-8 offset-2">
     <h3 class="heading">Create a New Listing</h3>
-    <form method="POST" action="/listings" class="row g-3 needs-validation" novalidate>
+    <form method="POST" action="/listings" class="row g-3 " >
       <label for="validationCustom01" class="form-label">Title</label>
-      <input name="listing[title]" placeholder="Enter title" id="validationCustom01" value="Mark" class="form-control" required type="text" />
+      <input name="listing[title]" placeholder="Enter title" id="validationCustom01"  class="form-control" required type="text" />
       <br /><br />
       <label for="description" class="form-label">Description</label>
       <textarea
@@ -16,16 +16,16 @@
         placeholder="Enter description"
         required
       ></textarea>
-      <br /><br />
+
       <label for="imglink" class="form-label">Image Link </label><i class="fa-solid fa-link"></i>
       <input
       class="form-control"
         name="listing[image]"
         placeholder="https://example.com/users/picture.png"
-        type="text"
-        required
+        
       />
-      <br /><br />
+      <br><br>
+     
       <div class="row">
         <div class="mb-3 col-4">
       <label class="form-label" for="price">Enter Price</label>
@@ -50,7 +50,7 @@
     </div>
       <br /><br />
       
-      <button class="btn ">Add</button>
+      <button class="btn btn-secondary">Add</button>
     </form>
   </div>
   </div>

@@ -95,8 +95,3 @@ app.delete("/listings/:id", async (req, res) => {
 app.listen(8080, () => {
   console.log("server is listening to port 8080");
 });
-
-
-// https://www.linkedin.com/pulse/deploying-nodejs-app-digitalocean-server-hayk-simonyan/
-
-// https://www.youtube.com/watch?v=A3z3WjptSgU
