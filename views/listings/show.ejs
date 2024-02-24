@@ -1,17 +1,44 @@
 <% layout("/layouts/boilerplate") %>
 
 <body>
-    <h3>Listing Details :</h3>
-    <ul>
-      <li><%= listing.title %></li>
-      <li><%= listing.description %></li>
-      <li>&#8377; <%= listing.price %></li>
-      <li><%= listing.location %></li>
-      <li><%= listing.country %></li>
-    </ul>
-    <br>
-    <a href="/listings/<%= listing._id %>/edit">Edit this Listing</a>
-    <br /><br />
-    <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
-      <button>Delete this listing</button>
+  
+  <div class="container">
+  
+  <div class="row">
+    <div class="col-6 offset-2 ">
+      <h3>Listing Details :</h3>
+    <div class="card " >
+      <img src="<%= listing.image %>" class="card-img-top showimg" alt="listing_image">
+
+    </div>
+    <div class="col-6">
+     
+      <div class="card-body">
+        <br>
+        <p class="card-text"><b><%= listing.title %></b></p>
+        
+        <p><%= listing.description %>
+        <br>
+       &#8377; <%= listing.price %>
+       <br>
+       <%= listing.location %> 
+       <br>
+       <%= listing.country %>
+
+        </p>
+      </div>
+        
+      </div>
+    
+   
+      <div class="btns">
+        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark  offset-0">Edit </a>
+        
+        <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+        <button class="btn btn-danger offset-3  ">Delete</button>
+      </div>
+      </div>
+    
+  </div>
+</div>
 </body>

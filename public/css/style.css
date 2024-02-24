@@ -7,7 +7,7 @@ body{
 .navbar{
     padding-top: 20px !important;
     padding-left: 60px  !important;
-    height:7rem !important;
+    height:6rem !important;
     background-color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif !important;
 }
@@ -21,6 +21,10 @@ body{
 .navbar-brand{
     font-family: Arial, Helvetica, sans-serif !important;
 
+}
+.login{
+    border: 2px solid gray !important ;
+    border-radius: 6px;
 }
 .navbar-nav{
  margin-left: 10rem !important;
@@ -68,6 +72,7 @@ body{
     opacity: 0.2;
     background-color: white;
 }
+
 .mainf{
     background-color: #F7F7F7;
 }
@@ -99,3 +104,14 @@ body{
 .f2{
     margin-left: 10px;
 }
+.showimg{
+    height: 40vh;
+   width: auto;
+}
+.btns{
+    display: flex;
+    
+}
+/* .fl{
+    display: flex;
+} */
