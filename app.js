@@ -1,14 +1,14 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const Listing = require("./models/listing.js");
+const Listing = require("./modals/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 // const { listingSchema } = require("./schema.js")
-const Review = require("./models/review.js");
+const Review = require("./modals/review.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -114,8 +114,18 @@ app.post("/listings/:id/reviews", async (req, res) => {
 
   await newReview.save();
   await listing.save();
-  res.redirect(`/listings/${listing._id}`)
+  res.redirect(`/listings/${listing._id}`);
 });
+
+app.delete(
+  "/listings/:id/reviews/:reviewId",
+  wrapAsync(async (req, res) => {
+    let { id, reviewId } = req.params;
+    await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
+    await Review.findByIdAndDelete(reviewId);
+    res.redirect(`/listings/${id}`)
+  })
+);
 
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not found"));
