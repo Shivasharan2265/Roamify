@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../modals/user.js");
 const wrapAsync = require("../utils/wrapAsync");
 const passport = require("passport");
+const { saveRedirectUrl } = require("../middleware.js");
 
 router.get("/signup", (req, res) => {
   res.render("./users/signup.ejs");
@@ -11,22 +12,17 @@ router.get("/signup", (req, res) => {
 router.post(
   "/signup",
   wrapAsync(async (req, res) => {
-    try {
-      let { username, email, password } = req.body;
-      const newUser = new User({ email, username });
-      const registeredUser = await User.register(newUser, password);
-      console.log(registeredUser);
-      req.login(registeredUser, (err) => {
-        if (err) {
-          return next(err);
-        }
-        req.flash("success", "Welcome to Roamify");
-        res.redirect("/listings"); 
-      });
-    } catch (e) {
-      req.flash("error", e.message);
-      res.redirect("/signup");
-    }
+    let { username, email, password } = req.body;
+    const newUser = new User({ email, username });
+    const registeredUser = await User.register(newUser, password);
+    console.log(registeredUser);
+    req.login(registeredUser, (err) => {
+      if (err) {
+        return next(err);
+      }
+      req.flash("success", "Welcome to Roamify");
+      res.redirect("/listings");
+    });
   })
 );
 
@@ -36,13 +32,15 @@ router.get("/login", (req, res) => {
 
 router.post(
   "/login",
+  saveRedirectUrl,
   passport.authenticate("local", {
     failureRedirect: "/login",
     failureFlash: true,
   }),
   async (req, res) => {
     req.flash("success", "Welcome back to Roamify!");
-    res.redirect("/listings");
+    let redirectUrl = res.locals.redirectUrl || "/listings";
+    res.redirect(redirectUrl);
   }
 );
 
