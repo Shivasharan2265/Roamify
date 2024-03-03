@@ -16,23 +16,49 @@
           />
         </div>
         <div class="col-7">
-          <div class="card-body" style="margin-left: 15px !important;">
+          <div class="card-body" style="margin-left: 15px !important">
             <br />
 
-            
-              <p class="desc" style="margin-left: 15px !important; font-weight: 300;">Owned by <i class="own" style="font-size: 15px;"><%= listing.owner.username %></i></p>
-              <p class="desc" style="margin-left: 15px !important; font-weight: 300;"><%= listing.description %></p>
-              
-              <p class="desc" style="margin-left: 15px !important; font-weight: 300;">&#8377; <%= listing.price.toLocaleString("en-IN") %></p>
-            
-              <p class="desc" style="margin-left: 15px !important; font-weight: 300;"><%= listing.location %></p>
-           
-              <p class="desc" style="margin-left: 15px !important; font-weight: 300;"><%= listing.country %></p>
-            
+            <p
+              class="desc"
+              style="margin-left: 15px !important; font-weight: 300"
+            >
+              Owned by
+              <i class="own" style="font-size: 15px"
+                ><%= listing.owner.username %></i
+              >
+            </p>
+            <p
+              class="desc"
+              style="margin-left: 15px !important; font-weight: 300"
+            >
+              <%= listing.description %>
+            </p>
+
+            <p
+              class="desc"
+              style="margin-left: 15px !important; font-weight: 300"
+            >
+              &#8377; <%= listing.price.toLocaleString("en-IN") %>
+            </p>
+
+            <p
+              class="desc"
+              style="margin-left: 15px !important; font-weight: 300"
+            >
+              <%= listing.location %>
+            </p>
+
+            <p
+              class="desc"
+              style="margin-left: 15px !important; font-weight: 300"
+            >
+              <%= listing.country %>
+            </p>
           </div>
         </div>
-      
-        <div class="btns" style="margin-left: 15px !important;">
+        <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+        <div class="btns" style="margin-left: 15px !important">
           <a
             href="/listings/<%= listing._id %>/edit"
             class="btn btn-dark offset-0"
@@ -46,10 +72,11 @@
             <button class="btn btn-danger offset-3">Delete</button>
           </form>
         </div>
-       
+        <%}%>
       </div>
     </div>
     <hr />
+    <% if(currUser) { %>
     <div class="col-9 offset-2 mb-3">
       <h4>Leave a Review</h4>
 
@@ -85,21 +112,29 @@
         </div>
         <button>Submit</button>
       </form>
-      <hr />
+    </div>
+    <% } %>
+    <hr />
+    <div class="col-9 offset-2 mb-3">
       <h4>All Reviews</h4>
       <div class="row">
-
-      <% for(review of listing.reviews){ %>
-        <div class="card col-5 ms-5 mb-3" style="border: 1px solid black !important;">
+        <% for(review of listing.reviews){ %>
+        <div
+          class="card col-5 ms-5 mb-3"
+          style="border: 1px solid black !important"
+        >
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title"><%= review.author.username %></h5>
             <p class="card-text"><%= review.comment %></p>
             <p class="card-text"><%= review.rating %> Stars</p>
-            <form class="mb-3" method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+            <form
+              class="mb-3"
+              method="POST"
+              action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+            >
               <button>Delete</button>
             </form>
           </div>
-          
         </div>
 
         <% } %>
