@@ -9,8 +9,9 @@
       <form
         method="POST"
         action="/listings/<%= listing._id %>?_method=PUT "
-        class="row g-3 needs-validation" novalidate
+        class="row g-3 needs-validation" novalidate enctype="multipart/form-data"
       >
+      <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
           name="listing[title]"
@@ -18,21 +19,29 @@
           value="<%= listing.title %>"
           type="text"
         />
-        <br /><br />
+      </div>
+        <!-- <br /><br /> -->
+        <div class="mb-3">
         <label for="title" class="form-label">Description</label>
         <textarea name="listing[description]" class="form-control">
               <%= listing.description %></textarea
         >
-        <br /><br />
-        <label for="imageurl" class="form-label">Image Url </label>
+      </div>
+      <div class="mb-3">
+        Original Image <br>
+        <img src="<%= originalImageUrl %>" alt="" height="100px" >
+      </div>
+      <div class="mb-3">
+        <label for="imageurl" class="form-label">New Image </label>
         <input
           name="listing[image]"
           class="form-control"
-          value="<%= listing.image %>"
-          type="text"
+         
+          type="file"
         />
-        <div></div>
-        <br /><br />
+      </div>
+        
+       
         <div class="row">
           <div class="mb-3 col-4">
             <label for="title" class="form-label">Price</label>
