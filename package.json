@@ -27,5 +27,6 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0"
   },
-  "description": "This is a Travel Site similar to AirBNB in which an user can post their property and they other users can rate their experiences."
+  "description": "This is a Travel Site similar to AirBNB in which an user can post their property and they other users can rate their experiences.",
+  "devDependencies": {}
 }

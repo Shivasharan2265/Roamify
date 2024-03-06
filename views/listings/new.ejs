@@ -1,24 +1,81 @@
 <% layout("/layouts/boilerplate") %>
 
+<style>
+  .new{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+    background-color: #1b1628 !important;
+
+  font-weight: lighter !important;
+  }
+  .heading{
+    margin-top: 50px;
+    color: white;
+    font-weight: 100;
+  }
+  
+  .pl::placeholder{
+  color: white;
+  font-weight: 100;
+}
+.sbh{
+  color: white;
+}
+@media (max-width:600px) {
+  .newfrm{
+   margin-left: 150px;
+    width: 1300px;
+  }
+  .heading{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 100px;
+  }
+  .sbh{
+    margin-top: 50px;
+   
+    color: white;
+    font-size: 80px;
+  }
+  .pl{
+    font-size: 60px;
+  }
+  .newlifrm input{
+    height: 100px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+  .newlistadd{
+    margin-top: 50px;
+  border-radius: 20px;
+  font-size: 50px;
+  height: 100px;
+  width: 300px;
+  }
+}
+</style>
+
+
 <body class="new">
   <div class="row">
-    <div class="col-8 offset-2">
-      <h3 class="heading">Create a New Listing</h3>
-      <br />
-      <form method="POST" action="/listings" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
-        <label for="validationCustom01" class="form-label">Title</label>
+    <div class="col-7 offset-2 newfrm">
+      <h1 class="heading">Create a New Listing</h1>
+      <form method="POST" action="/listings" class="row g-3 needs-validation newlifrm" novalidate enctype="multipart/form-data">
+        <label for="validationCustom01" class="form-label sbh">Title</label>
         <input
           name="listing[title]"
           placeholder="Enter title"
           id="validationCustom01"
-          class="form-control"
+          class="form-control pl"
+          style="background-color: #1b1628; color: white !important;"
           required
           type="text"
         />
-        <br /><br />
-        <label for="description" class="form-label">Description</label>
+      
+        <label for="description" class="form-label sbh">Description</label>
         <textarea
-          class="form-control"
+          class="form-control pl"
+          style="background-color: #1b1628; color: white !important;"
           name="listing[description]"
           placeholder="Enter description"
           required
@@ -43,14 +100,15 @@
           
         /> -->
         <div class="in">
-          <label for="img">Upload Image</label>&nbsp;&nbsp;<i
+          <label for="img" class="sbh">Upload Image</label>&nbsp;&nbsp;<i
             class="fa-solid fa-link"
           ></i>
         </div>
         <input
         name="listing[image]"
           type="file"
-          class="form-control"
+          class="form-control pl"
+          style="background-color: #1b1628; color: white !important;"
           placeholder="https://example.com/users/picture.png"
           
         />
@@ -58,11 +116,12 @@
 
         <div class="row">
           <div class="mb-3 col-4">
-            <label class="form-label" for="price">Enter Price</label>
+            <label class="form-label sbh" for="price">Enter Price</label>
             <input
-              class="form-control"
+              class="form-control pl"
+              style="background-color: #1b1628; color: white !important;"
               name="listing[price]"
-              placeholder="( Example:  &#8377; 1200 )"
+              placeholder="( Ex:  &#8377; 1200 )"
               required
               type="number"
               required
@@ -70,9 +129,10 @@
           </div>
           <br /><br />
           <div class="mb-3 col-4">
-            <label class="form-label" for="price">Country</label>
+            <label class="form-label sbh" for="price">Country</label>
             <input
-              class="form-control"
+              class="form-control pl"
+              style="background-color: #1b1628; color: white !important;"
               name="listing[country]"
               placeholder="Enter country"
               type="text"
@@ -82,9 +142,10 @@
 
           <br /><br />
           <div class="mb-3 col-4">
-            <label class="form-label" for="price">Location</label>
+            <label class="form-label sbh" for="price">Location</label>
             <input
-              class="form-control"
+              class="form-control pl"
+              style="background-color: #1b1628; color: white !important;"
               name="listing[location]"
               placeholder="Enter location"
               type="text"
@@ -94,7 +155,7 @@
         </div>
         <br /><br />
 
-        <button class="btn btn-secondary">Add</button>
+        <button class="btn btn-danger newlistadd">Add</button>
       </form>
     </div>
   </div>

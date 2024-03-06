@@ -1,38 +1,207 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/"
+<style>
+  .na{
+    background-color: #181421 !important;
+   
+  }
+  .frm{
+    display: flex;
+
+  }
+  .sbar{
+    width: auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+    font-weight: 100 !important;
+   
+  }
+  .inp{
+    
+    margin-right: 2px;
+    border-radius: 20px ;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+    font-weight: 100 !important;
+
+  }
+  .sr{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+    font-weight: 100 !important;
+
+  }
+  .su{
+    width: 100px;
+    color: white;
+    border: 1px solid #FF385C;
+    text-align: center;
+    border-radius: 20px;
+    transition: 0.2s ease;
+  }
+  .su:hover{
+    color: white;
+    transform: scale(1.2);
+  }
+  .lg{
+    width: 100px;
+    color: white !important;
+    background-color: #FF385C;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 20px;
+    transition: 0.2s ease;
+  }
+  .lg:hover{
+    transform: scale(1.2);
+  }
+  
+  .search{
+    background-color: #FF385C;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21vh;
+    transition: 0.2s ease;
+  }
+  .search:hover{
+    background-color: #FF385C;
+    color: white;
+    transform: scale(1.1);
+
+  }
+  .add{
+    border: none;
+    transition: 0.2s ease;
+  }
+  .add:hover{
+    transform: scale(1.2);
+  }
+  .ex{
+    transition: 0.2s ease;
+  }
+  .ex:hover{
+    transform: scale(1.2);
+  }
+  @media (max-width:600px) {
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  img{
+    height: 120px;
+  }
+  
+  .navbar{
+    height: 18rem !important;
+  }
+  .container-fluid{
+    width: 120vh;
+  }
+  .navbar-nav{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .navbar-brand{
+    font-size: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #navbarNavAltMarkup{
+   margin-top: 30px;
+    width: fit-content;
+   
+    background-color: black;
+  }
+  #navbarNavAltMarkup, .nav-link{
+    margin-left: 30px;
+    font-size: 80px !important;
+    align-items: center  !important;
+    justify-content: center  !important;
+    width: 200px  !important;
+  }
+  .navbar-toggler, .navbar-toggler-icon{
+    font-size: 80px;
+    
+    
+  }
+  .ex{
+    margin-left: 35vh;
+    margin-bottom: 20px;
+    
+  }
+  .add{
+    margin-left: 15vh;
+    width:140vh !important;
+    margin-bottom: 30px;
+  }
+  .su{
+    width: 420px !important;
+    margin-left: 28vh;
+    margin-bottom: 30px;
+  }
+  .lg{
+    width: 420px !important;
+    margin-left: 28vh;
+    margin-bottom: 30px;
+  }
+  .frm{
+    width: 100vh;
+    height: 100px !important;
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .srch-inp{
+    font-size: 50px;
+  }
+  .srch-bt{
+    margin-top: -2px;
+    font-size: 30px;
+    height: 90px !important;
+  }
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary na border-bottom sticky-top">
+  <div class="container-fluid" > 
+    <a class="navbar-brand"  style=" color: white;"href="/listings"
       ><img
+      
         src="https://cdn-icons-png.freepik.com/512/4530/4530643.png"
         height="60px"
         alt="logo"
-      />Roamify</a
+      />
+      <b> Roamify</b></a
     >
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavAltMarkup"
-      style="background-color: wheat"
+     style="background-color: white !important;"
     >
-      <span class="navbar-toggler-icon" style="background-color: wheat"></span>
+      <span class="navbar-toggler-icon"  style="color: white !important;"  ></span>
     </button>
-    <div
-      class="collapse navbar-collapse"
-      style="background-color: whitesmoke"
-      id="navbarNavAltMarkup"
-    >
-      <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" href="#">Home</a>
-        <a class="nav-link active" href="/listings">All Listings</a>
-        <a class="nav-link" href="/listings/new">Add new List</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: -20px;">
+        <a class="nav-link ex" style=" color: white;" href="/listings">Explore</a>
       </div>
-      <div class="navbar-nav">
+      <div class="navbar-nav sbar ">
+        <form class="form-inline frm" >
+          <input class="form-control inp mr-sm-2 srch-inp" type="search" placeholder="Search properties" aria-label="Search">
+          <button class="btn search sr my-2 my-sm-0 srch-bt" type="submit" ><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i> &nbsp; Search</button>
+        </form>
+      </div>
+      <div class="navbar-nav ">
+        <a class="nav-link add" style=" color: white; " href="/listings/new">Add your property</a>
         <% if(!currUser){ %>
-        <a class="nav-link" aria-current="page" href="/signup">SignUp</a>
-        <a class="nav-link active" href="/login">Login</a>
-        <% } %>
-        <% if(currUser){ %>
-        <a class="nav-link" href="/logout">Logout </a>
+        <a class="nav-link su"  aria-current="page" href="/signup"> <b>SignUp</b> </a>
+        <a class="nav-link active lg" href="/login"><b>Login</b></a>
+        <% } %> <% if(currUser){ %>
+        <a class="nav-link lg" style=" color: white;" href="/logout"><b>Logout</b> </a>
         <% } %>
       </div>
     </div>

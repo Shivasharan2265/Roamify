@@ -1,18 +1,54 @@
 <% layout("/layouts/boilerplate") %>
+<style>
+.main{
+  margin-top: 50px;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+    background-color: #1b1628 !important;
+}
+.pl::placeholder{
+  color: white;
+  font-weight: 100;
+}
+@media (max-width:600px) {
+  .from{
+    margin-left: -100px;
+    width: 1100px;
+  }
+.llooggiinn{
+  font-size: 130px;
+  margin-bottom: 100px;
+}
+.pl{
+  margin-bottom: 80px;
+  font-size: 90px;
+}
+.lgbt{
+  border-radius: 20px;
+  font-size: 50px;
+  height: 100px;
+  width: 200px;
+}
+}
+
+
+</style>
+
 <div class="row">
-  <div class="col-8 offset-2">
-    <form method="POST" action="/login" class="needs-validation" novalidate>
-        <h1 class="col-6 offset-3">Login</h1>
+  <div class="col-6 offset-3 main">
+    <form method="POST" action="/login" class="needs-validation from" novalidate>
+        <h1 class="col-6 llooggiinn ">Login</h1>
         <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" name="username" id="username" class="form-control" placeholder="Enter your Username" required> 
+            <label for="username" class="form-label pl">Username</label>
+            <input type="text" name="username" id="username" class="form-control pl" style="background-color: #1b1628; color: white !important;" placeholder="Enter your Username" required> 
         </div>
        
         <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" name="password" id="email" class="form-control" placeholder="Enter your Password" required> 
+            <label for="password" class="form-label pl">Password</label>
+            <input type="password" name="password" id="password" class="form-control pl" style="background-color: #1b1628; color: white !important;" placeholder="Enter your Password" required> 
         </div>
-        <button class="btn btn-success">Login</button>
+        <button class="btn btn-danger lgbt">Login</button>
     </form>
   </div>
 </div>

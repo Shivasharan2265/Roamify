@@ -1,21 +1,61 @@
 <% layout("/layouts/boilerplate") %>
+
+<style>
+  .main{
+  margin-top: 50px;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+    background-color: #1b1628 !important;
+}
+.sgup{
+  margin-bottom: 20px;
+}
+.pl::placeholder{
+  color: white;
+  font-weight: 100;
+}
+@media (max-width:600px) {
+  .from{
+    margin-left: -100px;
+    width: 1100px;
+  }
+  .sgup{
+    margin-left: -1px;
+    margin-bottom: 100px;
+    width: 1000px;
+    font-size: 100px;
+  }
+  .pl{
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+.ssupbtn{
+  margin-top: 50px;
+  border-radius: 20px;
+  font-size: 50px;
+  height: 100px;
+  width: 300px;
+}
+}
+</style>
 <div class="row">
-  <div class="col-8 offset-2">
-    <form method="POST" action="/signup" class="needs-validation" novalidate>
-        <h1 class="col-6 offset-3">SignUp on Roamify</h1>
+  <div class="col-7 offset-2 main">
+    <form method="POST" action="/signup" class="needs-validation from" novalidate>
+        <h1 class="col-6 offset-3 sgup">SignUp on Roamify</h1>
         <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" name="username" id="username" class="form-control" placeholder="Enter your Username" required> 
+            <label for="username" class="form-label pl">Username</label>
+            <input type="text" name="username" id="username" class="form-control pl" style="background-color: #1b1628; color: white !important;" placeholder="Enter your Username" required> 
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="text" name="email" id="email" class="form-control" placeholder="Enter your Email" required> 
+            <label for="email" class="form-label pl">Email</label>
+            <input type="text" name="email" id="email" class="form-control pl" style="background-color: #1b1628; color: white !important;" placeholder="Enter your Email" required> 
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" name="password" id="email" class="form-control" placeholder="Enter your Password" required> 
+            <label for="password" class="form-label pl">Password</label>
+            <input type="password" name="password" id="email" class="form-control pl" style="background-color: #1b1628; color: white !important;" placeholder="Enter your Password" required> 
         </div>
-        <button class="btn btn-success">Sign-Up</button>
+        <button class="btn btn-danger ssupbtn">Sign-Up</button>
     </form>
   </div>
 </div>

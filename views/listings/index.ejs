@@ -1,16 +1,110 @@
 <% layout("/layouts/boilerplate") %>
 
-
-  <body>
-    <!-- <h3>All listings</h3>
-    <form method="GET" action="/listings/new">
-      
-    </form> -->
+<style>
+  
+  #filters{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+    color: white;
+  }
+  .filter{
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+    font-size: 15px;
+    transition: 0.2s ease;
+  }
+  .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  @media (max-width:600px) {
+    #filters{
+      display: none;
+    }
+   
+    
+    .card-img-top{
+    
+   margin-left: 20px;
+      width: 1400px !important;
+    height: 1000px !important;
+    }
+    .tit{
+      margin-left: 20px;
+      font-size: 60px;
+    }
+    .city{
+      margin-left: 20px;
+      font-size: 60px;
+    }
+  }
+</style>
+  
+    
+    <div id="filters">
+      <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Homes</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-umbrella-beach"></i></div>
+        <p>Beaches</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-tent"></i></div>
+        <p>Hill Station</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mosque"></i></div>
+        <p>Iconic Building</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-brands fa-canadian-maple-leaf"></i></div>
+        <p>Tropical</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-regular fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mug-hot"></i></div>
+        <p>Bed & Breakfasts</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-brands fa-canadian-maple-leaf"></i></div>
+        <p>Tropical</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-regular fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mug-hot"></i></div>
+        <p>Bed & Breakfasts</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-brands fa-canadian-maple-leaf"></i></div>
+        <p>Tropical</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-regular fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+     
+    </div>
     <div class="empt"></div>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-3 index">
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-3 row-cols-xs-3 index tot">
       <% for(let listing of allListings) { %>
         <a href="/listings/<%= listing._id %>" class="linkk">
-        <div class="card"  >
+        <div class="card cr"  >
           <img
             src="<%= listing.image.url %>"
             class="card-img-top"
@@ -25,7 +119,7 @@
             <p class="card-text tit">
               <b><%= listing.title %> </b><br />
               
-              &#8377; <%= listing.price.toLocaleString("en-IN") %> / night <p class="city" style="margin-top: -15px;"><i class="fa-solid fa-location-dot" style="color: #ff0000;"></i>  <%= listing.location %></p>
+              &#8377; <%= listing.price.toLocaleString("en-IN") %> / night <p class="city" style="margin-top: -15px;"><i class="fa-solid fa-location-dot" style="color: #FF385C;"></i>  <%= listing.location %></p>
             </p>
             
           </div>
@@ -35,5 +129,5 @@
     </div>
     
     
-  </body>
+  
   
