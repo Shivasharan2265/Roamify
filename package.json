@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": "21.6.1"
+    "node": "10.2.4"
   },
   "name": "crud",
   "version": "1.0.0",
